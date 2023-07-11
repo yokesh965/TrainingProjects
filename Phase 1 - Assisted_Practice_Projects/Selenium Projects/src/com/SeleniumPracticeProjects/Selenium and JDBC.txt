@@ -1,0 +1,1 @@
+While Selenium is primarily used for web automation, it does not have built-in support for database operations. However, you can integrate Selenium with JDBC (Java Database Connectivity) to perform database operations in conjunction with your web automation tasks.
