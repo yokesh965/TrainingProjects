@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-08-24T12:31:53 IST" name="Default suite" finished-at="2023-08-24T12:32:00 IST" duration-ms="6683">
+    <groups>
+    </groups>
+    <test started-at="2023-08-24T12:31:53 IST" name="Default test" finished-at="2023-08-24T12:32:00 IST" duration-ms="6683">
+      <class name="restAssured.All_Request">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:restAssured.All_Request@609db43b]" started-at="2023-08-24T12:31:53 IST" name="setUp" finished-at="2023-08-24T12:31:54 IST" duration-ms="559" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="getProducts()[pri:1, instance:restAssured.All_Request@609db43b]" started-at="2023-08-24T12:31:54 IST" name="getProducts" finished-at="2023-08-24T12:31:59 IST" duration-ms="4860" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getProducts -->
+        <test-method signature="getUsers()[pri:2, instance:restAssured.All_Request@609db43b]" started-at="2023-08-24T12:31:59 IST" name="getUsers" finished-at="2023-08-24T12:31:59 IST" duration-ms="68" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUsers -->
+        <test-method signature="addProduct()[pri:3, instance:restAssured.All_Request@609db43b]" started-at="2023-08-24T12:31:59 IST" name="addProduct" finished-at="2023-08-24T12:32:00 IST" duration-ms="1056" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProduct -->
+      </class> <!-- restAssured.All_Request -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

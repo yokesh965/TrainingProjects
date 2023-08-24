@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "680ab29b-0d8d-499e-80cf-bdaec4d323e2",
+		"name": "FinalProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13402159"
+	},
+	"item": [
+		{
+			"name": "GET Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9010/get-shoes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9010",
+					"path": [
+						"get-shoes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Validate code and message fields in the response\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.code).to.exist.and.to.be.a('number', \"Code should be a number\");\r",
+							"    pm.expect(responseData.message).to.exist.and.to.be.a('string', \"Message should be a string\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Verify the presence of 'users' array and expected number of elements\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData.users).to.exist.and.to.be.an('array');\r",
+							"    pm.expect(responseData.users).to.have.lengthOf(3);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Password is not visible in the response\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseData).to.be.an('object');\r",
+							"    pm.expect(responseData.users).to.be.an('array');\r",
+							"\r",
+							"    responseData.users.forEach(function (user) {\r",
+							"        pm.expect(user.password).to.not.exist;\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9010/get-users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9010",
+					"path": [
+						"get-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9010/add-shoe?id=101&image=image_url&name=SampleShoe&category=Running&sizes=9&price=1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9010",
+					"path": [
+						"add-shoe"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "101"
+						},
+						{
+							"key": "image",
+							"value": "image_url"
+						},
+						{
+							"key": "name",
+							"value": "SampleShoe"
+						},
+						{
+							"key": "category",
+							"value": "Running"
+						},
+						{
+							"key": "sizes",
+							"value": "9"
+						},
+						{
+							"key": "price",
+							"value": "1000"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
